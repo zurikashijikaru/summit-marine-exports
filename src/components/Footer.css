@@ -31,6 +31,7 @@
 .footer-brand {
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
 .footer-logo {
@@ -40,6 +41,7 @@
     object-fit: contain;
     margin-bottom: 1rem;
     filter: brightness(0) invert(1);
+    margin: 0 auto 1.5rem;
 }
 
 .footer-section h3 {

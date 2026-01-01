@@ -142,12 +142,16 @@
         height: 100vh;
         background: linear-gradient(180deg, var(--color-deep-ocean) 0%, var(--color-ocean-blue) 100%);
         padding: 6rem 2rem 2rem;
-        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, visibility 0.3s;
         box-shadow: -10px 0 40px rgba(10, 37, 64, 0.3);
+        opacity: 0;
+        visibility: hidden;
     }
 
     .nav.active {
         right: 0;
+        opacity: 1;
+        visibility: visible;
     }
 
     .nav-list {

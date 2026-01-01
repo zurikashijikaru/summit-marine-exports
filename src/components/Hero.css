@@ -96,7 +96,7 @@
 /* Responsive */
 @media (max-width: 768px) {
     .hero {
-        min-height: 600px;
+        min-height: 50vh;
         background-attachment: scroll;
     }
 

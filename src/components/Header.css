@@ -179,29 +179,27 @@
 
 @media (max-width: 768px) {
     .header {
-        padding: 1rem 0;
+        padding: 0.5rem 0;
     }
 
     .header.scrolled {
-        padding: 0.75rem 0;
+        padding: 0.4rem 0;
     }
 
     .logo-img {
-        height: 2.5rem;
-    }
-
-    .header.scrolled .logo-img {
         height: 2.2rem;
     }
 
-    .header-container {
-        position: relative;
+    .header.scrolled .logo-img {
+        height: 2.0rem;
     }
 
     .mobile-toggle {
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
+        display: flex;
+        /* Keep flex from previous rule but reset positioning */
+        position: static;
+        transform: none;
+        margin-left: auto;
+        /* Ensure it pushes right if needed, though space-between handles it */
     }
 }

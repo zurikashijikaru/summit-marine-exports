@@ -29,7 +29,7 @@ const products = [
         name: 'Headless Shell-On',
         desc: 'Processed for convenience and freshness.',
         tag: 'Export Quality',
-        image: 'https://images.unsplash.com/photo-1510130387422-82bed34b37e9?w=400&h=300&fit=crop'
+        image: 'https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?w=400&h=300&fit=crop'
     }
 ];
 

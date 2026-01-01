@@ -24,7 +24,7 @@ const Products = () => {
             name: 'Freshwater Scampi',
             types: 'Whole, Headless',
             desc: 'Sweet, delicate flavor.',
-            image: 'https://images.unsplash.com/photo-1510130387422-82bed34b37e9?w=600&h=400&fit=crop'
+            image: 'https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?w=600&h=400&fit=crop'
         }
     ];
 

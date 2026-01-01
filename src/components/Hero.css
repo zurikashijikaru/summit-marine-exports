@@ -10,6 +10,8 @@
     justify-content: center;
     color: var(--color-crisp-white);
     overflow: hidden;
+    background-color: var(--color-deep-ocean);
+    /* Fallback to prevent white flashes on resize */
 }
 
 .hero-overlay {

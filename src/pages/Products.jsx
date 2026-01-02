@@ -1,5 +1,9 @@
 import React from 'react';
 import SEO from '../components/SEO';
+import vannameiImg from '../assets/carousel/carousel-2.JPG';
+import tigerImg from '../assets/carousel/carousel-3.JPG';
+import peeledImg from '../assets/carousel/carousel-8.JPG';
+import scampiImg from '../assets/carousel/carousel-5.JPG'; // Fallback or distinct image
 
 const Products = () => {
     // Schema for products
@@ -29,25 +33,25 @@ const Products = () => {
             name: 'Vannamei Shrimp',
             types: 'Head-On, Headless, PD, PDTO, Butterfly',
             desc: 'Farm-raised, mild flavor, firm texture.',
-            image: 'https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=600&h=400&fit=crop'
+            image: vannameiImg
         },
         {
             name: 'Black Tiger Shrimp',
             types: 'Head-On, Headless, Nobashi',
             desc: 'Bold flavor, distinct stripes, premium choice.',
-            image: 'https://images.unsplash.com/photo-1559737558-2f5a35f4523b?w=600&h=400&fit=crop'
+            image: tigerImg
         },
         {
             name: 'Value Added Products',
             types: 'Cooked, Breaded, Marinated, Skewers',
             desc: 'Ready-to-cook solutions for modern kitchens.',
-            image: 'https://images.unsplash.com/photo-1625943553852-781c6dd46faa?w=600&h=400&fit=crop'
+            image: peeledImg
         },
         {
             name: 'Freshwater Scampi',
             types: 'Whole, Headless',
             desc: 'Sweet, delicate flavor.',
-            image: 'https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?w=600&h=400&fit=crop'
+            image: scampiImg
         }
     ];
 

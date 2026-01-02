@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaGlobe, FaShip, FaHandshake } from 'react-icons/fa';
 import SEO from '../components/SEO';
+import globalReachImg from '../assets/carousel/carousel-5.JPG';
 
 const Exports = () => {
     const exportRegions = [
@@ -36,7 +37,12 @@ const Exports = () => {
                 </div>
             </div>
 
-            <div className="brands-section section-padding">
+            <div className="brands-section section-padding" style={{
+                background: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${globalReachImg})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                color: 'white'
+            }}>
                 <div className="container text-center">
                     <h2>Why Partner With Us?</h2>
                     <div className="card-grid" style={{ marginTop: '2rem' }}>

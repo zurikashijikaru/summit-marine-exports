@@ -1,4 +1,5 @@
 import React from 'react';
+import facilityImg from '../assets/carousel/carousel-9.JPG'; // High-quality facility image
 
 const About = () => {
     const timeline = [
@@ -20,10 +21,20 @@ const About = () => {
             {/* Leadership Section */}
             <section className="section-padding container">
                 <div className="row">
-                    <div className="image-placeholder" style={{ height: '400px' }}>
-                        Dr. Surya Rao Irrinki
+                    <div style={{ flex: 1 }}>
+                        <img
+                            src={facilityImg}
+                            alt="Summit Marine Facility"
+                            style={{
+                                width: '100%',
+                                height: '400px',
+                                objectFit: 'cover',
+                                borderRadius: '12px',
+                                boxShadow: '0 10px 30px rgba(0,0,0,0.1)'
+                            }}
+                        />
                     </div>
-                    <div>
+                    <div style={{ flex: 1 }}>
                         <h2 className="section-title">Leadership</h2>
                         <h3 style={{ color: 'var(--color-deep-ocean)', marginBottom: '1rem' }}>
                             Dr. Surya Rao Irrinki

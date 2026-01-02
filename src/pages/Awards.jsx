@@ -2,6 +2,7 @@ import React from 'react';
 import { FaTrophy, FaMedal, FaStar } from 'react-icons/fa';
 import cert1 from '../assets/certificates/BAP-4-Star-Blue-768x869.png';
 import cert2 from '../assets/certificates/Certificate1.png';
+import SEO from '../components/SEO';
 
 const Awards = () => {
     const awards = [
@@ -14,6 +15,11 @@ const Awards = () => {
 
     return (
         <div className="page">
+            <SEO
+                title="Awards & Certifications | BAP 4-Star & USFDA Approved"
+                description="Summit Marine Exports is a recognized 3-Star Export House. Certified by BRCGS, USFDA, BAP 4-Star, and ASC for sustainable quality seafood."
+                url="/awards"
+            />
             <div className="container section-padding">
                 <h1 className="section-title text-center">Awards & Achievements</h1>
                 <p className="section-subtitle text-center">

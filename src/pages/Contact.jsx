@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaClock } from 'react-icons/fa';
+import SEO from '../components/SEO';
 
 const Contact = () => {
     const contactInfo = [
@@ -11,6 +12,11 @@ const Contact = () => {
 
     return (
         <div className="page">
+            <SEO
+                title="Contact Summit Marine Exports | Bhimavaram, India"
+                description="Get in touch with Summit Marine Exports for bulk shrimp orders. Located in Bhimavaram, Andhra Pradesh. Call +91-1234567890 or email sales@summitmarine.com."
+                url="/contact"
+            />
             <div className="container section-padding">
                 <h1 className="section-title text-center">Contact Us</h1>
                 <p className="section-subtitle text-center">

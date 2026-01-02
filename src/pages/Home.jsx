@@ -3,11 +3,55 @@ import Hero from '../components/Hero';
 import Stats from '../components/Stats';
 import FeaturedProducts from '../components/FeaturedProducts';
 import Certifications from '../components/Certifications';
+import SEO from '../components/SEO';
 import heroBg from '../assets/hero-bg.png';
 
 const Home = () => {
+    const orgSchema = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Summit Marine Exports",
+        "url": "https://summitmarineexports.com",
+        "logo": "https://summitmarineexports.com/assets/logo.png",
+        "foundingDate": "1998",
+        "founders": [
+            {
+                "@type": "Person",
+                "name": "Founder Name" // Replace with actual if known, or generic
+            }
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Coastal Highway", // Placeholder
+            "addressLocality": "Bhimavaram",
+            "addressRegion": "Andhra Pradesh",
+            "postalCode": "534202",
+            "addressCountry": "IN"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91-1234567890",
+            "contactType": "sales",
+            "areaServed": ["US", "EU", "JP"],
+            "availableLanguage": ["en"]
+        },
+        "sameAs": [
+            "https://www.facebook.com/summitmarine",
+            "https://www.linkedin.com/company/summit-marine-exports"
+        ],
+        "description": "Leading manufacturer and exporter of frozen shrimp (Vannamei, Black Tiger) from Andhra Pradesh, India. 3-Star Export House certified by BAP, USFDA, and BRCGS."
+    };
+
     return (
         <div className="home-page">
+            <SEO
+                title="Best Shrimp Exporter in India | Vannamei & Tiger Prawns"
+                description="Summit Marine Exports: Top-rated supplier of premium frozen shrimp from Andhra Pradesh. Buy wholesale Vannamei, Black Tiger, and Headless Shell-On shrimp. USFDA & BAP 4-Star Certified."
+                keywords="shrimp exporter India, buy vannamei shrimp, black tiger prawns Andhra Pradesh, wholesale seafood suppliers, Summit Marine Exports, headless shell on shrimp, frozen shrimp prices"
+                image="/assets/hero-bg.png"
+                url="/"
+                schema={orgSchema}
+            />
             <Hero
                 title="Summit Marine Exports"
                 subtitle="Delivering premium Indian seafood to the world with excellence and sustainability since 1998"

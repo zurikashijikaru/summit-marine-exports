@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaUsers, FaGraduationCap, FaHeart, FaRocket } from 'react-icons/fa';
+import SEO from '../components/SEO';
 
 const Careers = () => {
     const benefits = [
@@ -18,6 +19,11 @@ const Careers = () => {
 
     return (
         <div className="page">
+            <SEO
+                title="Careers in Seafood Industry | Jobs in Bhimavaram"
+                description="Join Summit Marine Exports. Current openings for Quality Control, Production Supervisors, and Export Managers in Bhimavaram, Andhra Pradesh."
+                url="/careers"
+            />
             <div className="container section-padding">
                 <h1 className="section-title text-center">Join Our Team</h1>
                 <p className="section-subtitle text-center">

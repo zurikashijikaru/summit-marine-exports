@@ -1,6 +1,29 @@
 import React from 'react';
+import SEO from '../components/SEO';
 
 const Products = () => {
+    // Schema for products
+    const productSchema = {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "itemListElement": [
+            {
+                "@type": "Product",
+                "name": "Vannamei Shrimp",
+                "description": "Premium farm-raised white shrimp, Head-On, Headless, PD, PDTO.",
+                "brand": "Summit Marine Exports",
+                "offers": { "@type": "Offer", "availability": "https://schema.org/InStock", "areaServed": "Worldwide" }
+            },
+            {
+                "@type": "Product",
+                "name": "Black Tiger Shrimp",
+                "description": "Large, flavorful tiger prawns from aquaculture farms in India.",
+                "brand": "Summit Marine Exports",
+                "offers": { "@type": "Offer", "availability": "https://schema.org/InStock" }
+            }
+        ]
+    };
+
     const products = [
         {
             name: 'Vannamei Shrimp',
@@ -32,6 +55,12 @@ const Products = () => {
 
     return (
         <div className="page">
+            <SEO
+                title="Premium Indian Shrimp Products | Vannamei & Black Tiger"
+                description="Explore our range of frozen seafood products: Headless Shell-On (HLSO), Peeled & Deveined (PD), Nobashi, and Value-Added Shrimp. Best quality from India."
+                url="/products"
+                schema={productSchema}
+            />
             <div className="container section-padding">
                 <h1 className="section-title text-center">Our Products</h1>
                 <p className="section-subtitle text-center">

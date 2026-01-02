@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaIndustry, FaSnowflake, FaTruck, FaUsers } from 'react-icons/fa';
+import SEO from '../components/SEO';
 
 const Infrastructure = () => {
     const facilities = [
@@ -11,6 +12,11 @@ const Infrastructure = () => {
 
     return (
         <div className="page">
+            <SEO
+                title="Seafood Processing Infrastructure | Cold Storage Bhimavaram"
+                description="State-of-the-art shrimp processing facilities with 90 tons/day capacity. Advanced cold storage (-25°C) and dedicated logistics fleet in Andhra Pradesh."
+                url="/infrastructure"
+            />
             <div className="container section-padding">
                 <h1 className="section-title text-center">Infrastructure</h1>
                 <p className="section-subtitle text-center">

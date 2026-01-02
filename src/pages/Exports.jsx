@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaGlobe, FaShip, FaHandshake } from 'react-icons/fa';
+import SEO from '../components/SEO';
 
 const Exports = () => {
     const exportRegions = [
@@ -11,6 +12,11 @@ const Exports = () => {
 
     return (
         <div className="page">
+            <SEO
+                title="Global Shrimp Exporter to USA, EU, Japan | Summit Marine"
+                description="Summit Marine Exports supplies premium Indian shrimp to 10+ countries including USA, UK, Germany, France, and Japan. Reliable international shipping."
+                url="/exports"
+            />
             <div className="container section-padding">
                 <h1 className="section-title text-center">International Exports</h1>
                 <p className="section-subtitle text-center">

@@ -1,15 +1,7 @@
 import React from 'react';
 import './Certifications.css';
 
-// Placeholder logos - in prod these would be images
-const CertsData = [
-    { name: 'BRCGS', color: '#009fe3' },
-    { name: 'USFDA', color: '#2C3E50' },
-    { name: 'BAP 4-Star', color: '#005a9c' },
-    { name: 'ASC', color: '#33AE4C' },
-    { name: 'EU Approved', color: '#FFD700' },
-    { name: 'FSSAI', color: '#f58220' }
-];
+import certImage from '../assets/certificates/Certificate1.png';
 
 const Certifications = () => {
     return (
@@ -18,13 +10,12 @@ const Certifications = () => {
                 <h2 className="section-title">Quality Certifications</h2>
                 <p className="section-subtitle">Committed to the highest global standards of safety and sustainability.</p>
 
-                <div className="certs-grid">
-                    {CertsData.map((cert, index) => (
-                        <div key={index} className="cert-item" style={{ borderColor: cert.color }}>
-                            {/* In a real app, <img src={...} /> */}
-                            <span style={{ color: cert.color, fontWeight: 'bold' }}>{cert.name}</span>
-                        </div>
-                    ))}
+                <div className="certs-display" style={{ marginTop: '3rem' }}>
+                    <img
+                        src={certImage}
+                        alt="Our Quality Certifications: BRCGS, USFDA, BAP, ASC, EU Approved, FSSAI"
+                        style={{ maxWidth: '100%', height: 'auto', maxHeight: '150px' }}
+                    />
                 </div>
             </div>
         </div>

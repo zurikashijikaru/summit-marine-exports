@@ -1,5 +1,7 @@
 import React from 'react';
 import { FaTrophy, FaMedal, FaStar } from 'react-icons/fa';
+import cert1 from '../assets/certificates/BAP-4-Star-Blue-768x869.png';
+import cert2 from '../assets/certificates/Certificate1.png';
 
 const Awards = () => {
     const awards = [
@@ -27,6 +29,40 @@ const Awards = () => {
                     ))}
                 </div>
             </div>
+
+            {/* Verified Certifications Section */}
+            <section className="certifications-section section-padding bg-light" style={{ backgroundColor: '#f9f9f9' }}>
+                <div className="container text-center">
+                    <h2 className="section-title">Our Certifications</h2>
+                    <p className="section-subtitle">Accredited by Global Standards</p>
+
+                    <div className="cert-grid" style={{
+                        marginTop: '3rem',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        gap: '4rem',
+                        flexWrap: 'wrap',
+                        alignItems: 'center'
+                    }}>
+                        <div className="cert-item" style={{ maxWidth: '300px' }}>
+                            <img
+                                src={cert1}
+                                alt="BAP 4 Star Certification"
+                                style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
+                            />
+                            <p style={{ marginTop: '1rem', fontWeight: 'bold' }}>BAP 4-Star Certified</p>
+                        </div>
+                        <div className="cert-item" style={{ maxWidth: '300px' }}>
+                            <img
+                                src={cert2}
+                                alt="Certificate of Compliance"
+                                style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
+                            />
+                            <p style={{ marginTop: '1rem', fontWeight: 'bold' }}>Quality Excellence</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             {/* Highlights Section */}
             <section className="brands-section section-padding">

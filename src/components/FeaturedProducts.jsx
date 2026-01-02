@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './FeaturedProducts.css';
+import imgHeadless from '../assets/carousel/carousel-2.JPG';
 
 const products = [
     {
@@ -29,7 +30,7 @@ const products = [
         name: 'Headless Shell-On',
         desc: 'Processed for convenience and freshness.',
         tag: 'Export Quality',
-        image: 'https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?w=400&h=300&fit=crop'
+        image: imgHeadless
     }
 ];
 

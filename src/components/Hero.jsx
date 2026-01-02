@@ -1,30 +1,131 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Hero.css';
 
-const Hero = ({ title, subtitle, bgImage }) => {
-    return (
-        <div
-            className="hero"
-            style={{ backgroundImage: `url(${bgImage})` }}
-        >
-            <div className="hero-overlay"></div>
+// Import local images from assets/carousel
+import img1 from '../assets/carousel/carousel-1.jpg';
+import img2 from '../assets/carousel/carousel-2.JPG';
+import img3 from '../assets/carousel/carousel-3.JPG';
+import img4 from '../assets/carousel/carousel-4.JPG';
+import img5 from '../assets/carousel/carousel-5.JPG';
+import img6 from '../assets/carousel/carousel-6.JPG';
+import img7 from '../assets/carousel/carousel-7.JPG';
+import img8 from '../assets/carousel/carousel-8.JPG';
+import img9 from '../assets/carousel/carousel-9.JPG';
 
-            <div className="container hero-content text-center">
-                <span className="hero-badge fade-in">🦐 Premium Indian Seafood</span>
-                <h1 className="fade-in delay-100">{title}</h1>
-                <p className="fade-in delay-200">{subtitle}</p>
-                <div className="hero-buttons fade-in delay-300">
-                    <Link to="/products" className="btn btn-primary">
-                        Explore Products
-                    </Link>
-                    <Link to="/contact" className="btn btn-outline">
-                        Contact Us
-                    </Link>
+const Hero = () => {
+    const slides = [
+        {
+            image: img1,
+            title: "Premium Indian Seafood",
+            subtitle: "Exporting Freshness & Quality Worldwide"
+        },
+        {
+            image: img2,
+            title: "Vannamei Prawns",
+            subtitle: "Sustainably Farmed, Expertly Processed"
+        },
+        {
+            image: img3,
+            title: "Nobashi Ebi",
+            subtitle: "Perfectly Stretched for Authentic Tempura"
+        },
+        {
+            image: img4,
+            title: "Global Standards",
+            subtitle: "Certified Quality for International Markets"
+        },
+        {
+            image: img5,
+            title: "State-of-the-Art Processing",
+            subtitle: "Advanced Technology for Superior Hygiene"
+        },
+        {
+            image: img6,
+            title: "Tiger Prawns",
+            subtitle: "Rich Flavor from Pristine Waters"
+        },
+        {
+            image: img7,
+            title: "Sustainable Practices",
+            subtitle: "Committed to Responsible Aquaculture"
+        },
+        {
+            image: img8,
+            title: "Quality Assurance",
+            subtitle: "Rigorous Testing at Every Stage"
+        },
+        {
+            image: img9,
+            title: "Global Reach",
+            subtitle: "Delivering Excellence Across Continents"
+        }
+    ];
+
+    const [currentSlide, setCurrentSlide] = useState(0);
+
+    // Auto-rotate slides
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrentSlide((prev) => (prev + 1) % slides.length);
+        }, 5000);
+        return () => clearInterval(timer);
+    }, [slides.length]);
+
+    const nextSlide = () => {
+        setCurrentSlide((prev) => (prev + 1) % slides.length);
+    };
+
+    const prevSlide = () => {
+        setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+    };
+
+    return (
+        <div className="hero-carousel">
+            {slides.map((slide, index) => (
+                <div
+                    key={index}
+                    className={`hero-slide ${index === currentSlide ? 'active' : ''}`}
+                    style={{ backgroundImage: `url(${slide.image})` }}
+                >
+                    <div className="hero-overlay"></div>
+                    <div className="container hero-content text-center">
+                        <span className="hero-badge fade-in">🦐 Premium Quality</span>
+                        <h1 className="fade-in delay-100">{slide.title}</h1>
+                        <p className="fade-in delay-200">{slide.subtitle}</p>
+                        <div className="hero-buttons fade-in delay-300">
+                            <Link to="/products" className="btn btn-primary">
+                                Explore Products
+                            </Link>
+                            <Link to="/contact" className="btn btn-outline">
+                                Contact Us
+                            </Link>
+                        </div>
+                    </div>
                 </div>
+            ))}
+
+            {/* Navigation Controls */}
+            <button className="carousel-control prev" onClick={prevSlide} aria-label="Previous Slide">
+                &#10094;
+            </button>
+            <button className="carousel-control next" onClick={nextSlide} aria-label="Next Slide">
+                &#10095;
+            </button>
+
+            {/* Dots */}
+            <div className="carousel-indicators">
+                {slides.map((_, index) => (
+                    <button
+                        key={index}
+                        className={`indicator ${index === currentSlide ? 'active' : ''}`}
+                        onClick={() => setCurrentSlide(index)}
+                        aria-label={`Go to slide ${index + 1}`}
+                    />
+                ))}
             </div>
 
-            {/* Wave Divider */}
+            {/* Wave Divider (kept from original) */}
             <div className="wave-divider">
                 <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
                     <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" className="shape-fill"></path>

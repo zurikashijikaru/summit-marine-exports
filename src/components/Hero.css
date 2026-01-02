@@ -1,17 +1,33 @@
-.hero {
+.hero-carousel {
     position: relative;
     height: 100vh;
     min-height: 700px;
+    overflow: hidden;
+    color: white;
+    background-color: #001f3f;
+    /* Deep Ocean fallback */
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-crisp-white);
-    overflow: hidden;
-    background-color: var(--color-deep-ocean);
-    /* Fallback to prevent white flashes on resize */
+    z-index: 1;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    z-index: 2;
 }
 
 .hero-overlay {
@@ -20,70 +36,210 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg,
-            rgba(10, 37, 64, 0.9) 0%,
-            rgba(0, 48, 135, 0.75) 40%,
-            rgba(0, 180, 216, 0.5) 100%);
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.3),
+            rgba(0, 31, 63, 0.7));
     z-index: 1;
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     max-width: 900px;
+    padding: 0 20px;
 }
 
+/* Badge */
 .hero-badge {
     display: inline-block;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 0.5rem 1.5rem;
     border-radius: 50px;
     font-size: 0.9rem;
-    font-weight: 500;
+    font-weight: 600;
+    letter-spacing: 1px;
     margin-bottom: 1.5rem;
-    letter-spacing: 0.5px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
+/* Headings */
 .hero-content h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    margin-bottom: 1.25rem;
-    color: var(--color-crisp-white);
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    font-size: 4.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
     line-height: 1.1;
+    color: white;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .hero-content p {
     font-size: 1.35rem;
-    font-weight: 300;
-    max-width: 700px;
-    margin: 0 auto 2.5rem;
+    margin-bottom: 2.5rem;
     opacity: 0.95;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
     line-height: 1.6;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+}
+
+.hero-slide.active .fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-100 {
+    transition-delay: 0.2s;
+}
+
+.delay-200 {
+    transition-delay: 0.4s;
+}
+
+.delay-300 {
+    transition-delay: 0.6s;
+}
+
+/* Buttons */
 .hero-buttons {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     justify-content: center;
     flex-wrap: wrap;
 }
 
+.btn {
+    padding: 1rem 2.8rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary {
+    background: #00a8e8;
+    color: white;
+    box-shadow: 0 4px 20px rgba(0, 168, 232, 0.4);
+    border: none;
+}
+
+.btn-primary:hover {
+    background: #0096d1;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 168, 232, 0.6);
+}
+
+.btn-outline {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+}
+
+.btn-outline:hover {
+    background: white;
+    color: #001f3f;
+    border-color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Carousel Controls */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 0;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.carousel-control:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-control.prev {
+    left: 30px;
+}
+
+.carousel-control.next {
+    right: 30px;
+}
+
+/* Indicators */
+.carousel-indicators {
+    position: absolute;
+    bottom: 140px;
+    /* Positioned above the wave */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 10;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.indicator:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.indicator.active {
+    background: white;
+    transform: scale(1.2);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
 /* Wave Divider */
-.hero .wave-divider {
+.wave-divider {
     position: absolute;
     bottom: -1px;
     left: 0;
     width: 100%;
     overflow: hidden;
     line-height: 0;
-    z-index: 3;
+    z-index: 5;
 }
 
-.hero .wave-divider svg {
+.wave-divider svg {
     position: relative;
     display: block;
     width: calc(200% + 1.3px);
@@ -91,19 +247,30 @@
     animation: waveMove 15s linear infinite;
 }
 
-.hero .wave-divider .shape-fill {
-    fill: var(--color-bg-light);
+.shape-fill {
+    fill: #f4f7f6;
+    /* Assuming this matches your site's bg */
+}
+
+@keyframes waveMove {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .hero {
-        min-height: 50vh;
-        background-attachment: scroll;
+    .hero-carousel {
+        height: 85vh;
+        min-height: 500px;
     }
 
     .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
     }
 
     .hero-content p {
@@ -111,22 +278,32 @@
         padding: 0 1rem;
     }
 
-    .hero-badge {
-        font-size: 0.8rem;
-        padding: 0.4rem 1rem;
+    .carousel-control {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
     }
 
-    .hero .wave-divider svg {
-        height: 60px;
+    .carousel-control.prev {
+        left: 10px;
+    }
+
+    .carousel-control.next {
+        right: 10px;
     }
 
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 1rem;
     }
 
-    .hero-buttons .btn {
+    .btn {
         width: 100%;
         max-width: 280px;
+    }
+
+    .carousel-indicators {
+        bottom: 110px;
     }
 }

@@ -4,7 +4,7 @@ import SEO from '../components/SEO';
 
 const Contact = () => {
     const contactInfo = [
-        { icon: FaMapMarkerAlt, label: 'Address', value: 'Rs #130, Yanamadurru Village, Bhimavaram, AP - 534239, India' },
+        { icon: FaMapMarkerAlt, label: 'Address', value: '#130, Yanamadurru Village, Bhimavaram, AP - 534239, India' },
         { icon: FaEnvelope, label: 'Email', value: 'sales@summitmarineexports.com' },
         { icon: FaPhone, label: 'Phone', value: '+91 98485 23600' },
         { icon: FaClock, label: 'Hours', value: 'Mon - Sat: 9:00 AM - 6:00 PM' }

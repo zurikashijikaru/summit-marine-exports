@@ -32,7 +32,7 @@ const Footer = () => {
                     <ul>
                         <li>
                             <FaMapMarkerAlt className="icon" />
-                            <span>Rs #130, Yanamadurru Village, <br />Bhimavaram, AP - 534239, India</span>
+                            <span>#130, Yanamadurru Village, <br />Bhimavaram, AP - 534239, India</span>
                         </li>
                         <li>
                             <FaEnvelope className="icon" />

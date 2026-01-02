@@ -1,9 +1,9 @@
 import React from 'react';
 import SEO from '../components/SEO';
-import vannameiImg from '../assets/carousel/carousel-2.JPG';
-import tigerImg from '../assets/carousel/carousel-3.JPG';
-import peeledImg from '../assets/carousel/carousel-8.JPG';
-import scampiImg from '../assets/carousel/carousel-5.JPG'; // Fallback or distinct image
+import vannameiImg from '../assets/carousel/vannamei-shrimp.jpg';
+import tigerImg from '../assets/carousel/black-tiger-shrimp.jpg';
+import peeledImg from '../assets/carousel/value-added-shrimp.jpg';
+import scampiImg from '../assets/carousel/global-exports.jpg'; // Fallback or distinct image
 
 const Products = () => {
     // Schema for products

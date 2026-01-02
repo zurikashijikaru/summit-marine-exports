@@ -1,10 +1,10 @@
 import React from 'react';
 import { FaIndustry, FaSnowflake, FaTruck, FaUsers } from 'react-icons/fa';
 import SEO from '../components/SEO';
-import plantImg from '../assets/carousel/carousel-4.JPG';
-import coldStorageImg from '../assets/carousel/carousel-7.JPG';
-import logisticsImg from '../assets/carousel/carousel-6.JPG';
-import workforceImg from '../assets/carousel/carousel-1.jpg';
+import plantImg from '../assets/carousel/processing-plant.jpg';
+import coldStorageImg from '../assets/carousel/cold-storage.jpg';
+import logisticsImg from '../assets/carousel/logistics-shipping.jpg';
+import workforceImg from '../assets/carousel/workforce-processing.jpg';
 
 const Infrastructure = () => {
     const facilities = [

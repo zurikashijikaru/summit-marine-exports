@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './FeaturedProducts.css';
-import imgHeadless from '../assets/carousel/carousel-2.JPG';
+import imgHeadless from '../assets/carousel/vannamei-shrimp.jpg';
 
 const products = [
     {

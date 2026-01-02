@@ -1,5 +1,5 @@
 import React from 'react';
-import facilityImg from '../assets/carousel/carousel-9.JPG'; // High-quality facility image
+import facilityImg from '../assets/carousel/shrimp-facility.jpg'; // High-quality facility image
 
 const About = () => {
     const timeline = [

@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 import './Hero.css';
 
 // Import local images from assets/carousel
-import img1 from '../assets/carousel/carousel-1.jpg';
-import img2 from '../assets/carousel/carousel-2.JPG';
-import img3 from '../assets/carousel/carousel-3.JPG';
-import img4 from '../assets/carousel/carousel-4.JPG';
-import img5 from '../assets/carousel/carousel-5.JPG';
-import img6 from '../assets/carousel/carousel-6.JPG';
-import img7 from '../assets/carousel/carousel-7.JPG';
-import img8 from '../assets/carousel/carousel-8.JPG';
-import img9 from '../assets/carousel/carousel-9.JPG';
+import img1 from '../assets/carousel/workforce-processing.jpg';
+import img2 from '../assets/carousel/vannamei-shrimp.jpg';
+import img3 from '../assets/carousel/black-tiger-shrimp.jpg';
+import img4 from '../assets/carousel/processing-plant.jpg';
+import img5 from '../assets/carousel/global-exports.jpg';
+import img6 from '../assets/carousel/logistics-shipping.jpg';
+import img7 from '../assets/carousel/cold-storage.jpg';
+import img8 from '../assets/carousel/value-added-shrimp.jpg';
+import img9 from '../assets/carousel/shrimp-facility.jpg';
 
 const Hero = () => {
     const slides = [

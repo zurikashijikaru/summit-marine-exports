@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaGlobe, FaShip, FaHandshake } from 'react-icons/fa';
 import SEO from '../components/SEO';
-import globalReachImg from '../assets/carousel/carousel-5.JPG';
+import globalReachImg from '../assets/carousel/global-exports.jpg';
 
 const Exports = () => {
     const exportRegions = [
